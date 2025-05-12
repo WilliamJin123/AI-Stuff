@@ -1,11 +1,10 @@
 import dotenv from "dotenv"
 import { GoogleGenerativeAI } from "@google/generative-ai"
 
+
+
 dotenv.config()
-
-
-console.log(process.env.API_KEY)
-const genAI = new GoogleGenerativeAI()
+const genAI = new GoogleGenerativeAI(process.env.API_KEY)
 
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" })
 const prompt = "write a one sentence fact about the human body";
